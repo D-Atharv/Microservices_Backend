@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Production
+/dist
+
+# dotenv environment variables file
+.env
+
+#temporary image storage for development mode
+/uploads
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE specific files
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Debugging files
+*.swp
+*.swo
+*.log
+
+# OS-specific files
+Thumbs.db

@@ -1,0 +1,21 @@
+# Step 1: Use an official Node.js image as the base image
+FROM node:18-alpine
+
+# Step 2: Set the working directory in the container
+WORKDIR /app
+
+# Step 3: Copy package.json and package-lock.json (if exists)
+COPY package*.json ./
+
+# Step 4: Install dependencies (both production and dev dependencies)
+RUN npm install --production
+RUN npm install --only=dev
+
+# Step 5: Copy the rest of the application code
+COPY . .
+
+# Step 6: Expose the port the app will run on (same as defined in your Express app)
+EXPOSE 5000
+
+# Step 7: Start the app
+CMD ["npm", "run", "devStart"]
